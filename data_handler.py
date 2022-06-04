@@ -14,10 +14,10 @@ import matplotlib.pyplot as plt
 transforms_train = transforms.Compose([transforms.Grayscale(), transforms.Resize((128, 128)), transforms.ToTensor(), transforms.Normalize(mean=[0.5,], std=[0.5,])])
 transforms_test  = transforms.Compose([transforms.Grayscale(), transforms.Resize((128, 128)), transforms.ToTensor(), transforms.Normalize(mean=[0.5,], std=[0.5,])])
 
-root_path = "C:/Users/Omistaja/Desktop/epicode/deep_learning/flower_data/"
+root_path = "C:/Users/Abubakr/Documents/Datasets/oxford-102-flower-pytorch/flower_data/flower_data/"
 
 datasets_train = datasets.ImageFolder(root= root_path + 'train', transform=transforms_train)
-datasets_test  = datasets.ImageFolder(root= root_path + 'test',  transform=transforms_test)
+datasets_test  = datasets.ImageFolder(root= root_path + 'valid',  transform=transforms_test)
 
 dataloader_train = DataLoader(dataset=datasets_train, batch_size=32, shuffle=True)
 dataloader_test  = DataLoader(dataset=datasets_test,  batch_size=32, shuffle=True)
@@ -26,7 +26,7 @@ model = Flowers_Classifier()
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 device = 'cuda' if torch.cuda.is_available() else 'cpu' 
-
+print(device)
 epochs, all_train_losses, all_test_losses, all_accuracies = 5, [], [], []
 
 for epoch in range(epochs):
