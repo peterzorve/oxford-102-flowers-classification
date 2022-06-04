@@ -5,15 +5,15 @@
 
 Libraries, Version, How to Install using Anaconda
 -------------------------------------------------------------------
-	------------------------------------------------------------
-	LIBRARY		| VERSION	|  ANACONDA INSTALLATION 
-	----------------|---------------|---------------------------
-	Python 		|  3.8		|	      	
-	matplotlib 	|  3.5.1	|	
-	torch 		|  1.11.0	|     
-	torchvision	|  0.12.0	|
-  	sklearn		|  1.0.2	|
-	------------------------------------------------------------
+	--------------------------------------------------------------------------------
+	LIBRARY		|    VERSION	|  ANACONDA INSTALLATION 
+	----------------|---------------|-----------------------------------------------
+	Python 		|     3.8	|         	
+	matplotlib 	|    3.5.1	|  conda install -c conda-forge matplotlib 	
+	torch 		|    1.11.0	|  conda install -c pytorch pytorch 
+	torchvision	|    0.12.0	|  conda install -c conda-forge torchvision
+  	sklearn		|    1.0.2	|  conda install -c anaconda scikit-learn
+	-------------------------------------------------------------------------------
   
  This github repository contains different files 
  ------------------------------------------------------------------
