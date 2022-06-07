@@ -10,21 +10,22 @@ def data_loader():
                                        transforms.Normalize([0.5, 0.5, 0.5],
                                                             [0.5, 0.5, 0.5])])
 
-    test_transform = transforms.Compose([transforms.CenterCrop(224),
+    test_transform = transforms.Compose([transforms.CenterCrop(400),
                                       transforms.ToTensor(),
                                       transforms.Normalize([0.5, 0.5, 0.5],
                                                            [0.5, 0.5, 0.5])])
 
-    train_set=datasets.Flowers102('flower_data/', download=True, train=True, transform=train_transform)
-    trainset=DataLoader(train_set, batch_size=32, shuffle=True)
+    data_dir= 'C:/Users/Abubakr/Documents/Datasets/oxford-102-flower-pytorch/flower_data'
 
-    test_set=datasets.Flowers102('flower_data', download=True, train=False, transform=test_transform)
-    testset=DataLoader(test_set, batch_size=32, shuffle=False)
+    train_set=datasets.ImageFolder(data_dir+'/train',transform=train_transform)
+    trainset=DataLoader(train_set, batch_size=102, shuffle=True)
+
+    test_set=datasets.ImageFolder(data_dir+'/valid',transform=test_transform)
+    testset=DataLoader(test_set, batch_size=102, shuffle=False)
 
     return trainset, testset
     
 trainset, testset= data_loader()
-print(trainset.shape)
-print(testset.shape)
+
 
     
