@@ -1,5 +1,7 @@
+import torch
 import torch.nn as nn
 import torch.nn.functional as F
+torch.manual_seed(0)
 
 class Net(nn.Module):
     def __init__(self):
@@ -7,7 +9,7 @@ class Net(nn.Module):
         self.conv1 = nn.Conv2d(3, 32, 5)
         self.pool = nn.MaxPool2d(2, 2)
         self.conv2 = nn.Conv2d(32, 16, 5)
-        self.fc1 = nn.Linear(16*59*59, 256) # fc--> fully connected
+        self.fc1 = nn.Linear(16*72*72, 256) # fc--> fully connected
         self.fc2 = nn.Linear(256, 128)
         self.fc3 = nn.Linear(128, 102)
 

@@ -1,16 +1,18 @@
 import torch
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader 
-
+torch.manual_seed(0)
 def data_loader():
-    train_transform = transforms.Compose([transforms.RandomRotation(30),
-                                       transforms.RandomResizedCrop(250),
+    train_transform = transforms.Compose([transforms.Resize(350),
+                                       transforms.RandomRotation(30),
+                                       transforms.RandomResizedCrop(300),
                                        transforms.RandomHorizontalFlip(),
                                        transforms.ToTensor(),
                                        transforms.Normalize([0.5, 0.5, 0.5],
                                                             [0.5, 0.5, 0.5])])
 
-    test_transform = transforms.Compose([transforms.CenterCrop(250),
+    test_transform = transforms.Compose([transforms.Resize(350),
+                                      transforms.CenterCrop(300),
                                       transforms.ToTensor(),
                                       transforms.Normalize([0.5, 0.5, 0.5],
                                                            [0.5, 0.5, 0.5])])
