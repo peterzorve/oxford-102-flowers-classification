@@ -24,3 +24,5 @@ def imshow(image, ax=None, title=None, normalize=True):
     ax.set_yticklabels('')
 
     return ax
+
+
