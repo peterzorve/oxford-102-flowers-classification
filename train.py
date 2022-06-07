@@ -4,6 +4,7 @@ import data_handler as dh
 import torch.optim as optim
 import torch.nn as nn
 import matplotlib.pyplot as plt
+import torch.nn.functional as F
 
 
 net=Net()
@@ -15,10 +16,6 @@ trainloader, testloader=dh.data_loader()
 
 def torch_fit(trainloader,criterion, lr, num_epochs, model):
     optimizer = optim.SGD(model.parameters(), lr, momentum=0.9)
-
-    device= 'cuda' if torch.cuda.is_available() else "cpu"
-    print(device)
-    model.to(device)
 
     train_losses=[]
     test_losses=[]
