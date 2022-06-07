@@ -1,5 +1,7 @@
 import torch
 from torchvision import transforms
+from torch.utils.data import DataLoader 
+
 
 def data_loader(pth):
     train_transform = transforms.Compose([transforms.RandomRotation(30),
@@ -14,6 +16,5 @@ def data_loader(pth):
                                       transforms.Normalize([0.5, 0.5, 0.5],
                                                            [0.5, 0.5, 0.5])])
     
-    pth='C:/Users/Abubakr/Documents/Datasets/oxford-102-flower-pytorch/flower_data'
 
-    train_data =
+    
