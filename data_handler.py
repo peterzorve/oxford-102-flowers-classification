@@ -24,8 +24,6 @@ def data_loader():
     testset=DataLoader(test_set, batch_size=102, shuffle=False)
 
     return trainset, testset
-    
-trainset, testset= data_loader()
 
 
     

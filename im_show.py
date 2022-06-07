@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import data_handler as dh
 
 def imshow(image, ax=None, title=None, normalize=True):
     """Imshow for Tensor."""
